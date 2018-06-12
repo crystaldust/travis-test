@@ -13,5 +13,5 @@ script:
   - echo "${TRAVIS_TAG}"
 
 after_success:
-  - if [ "$TRAVIS_TAG" = "true" ]; then bash -x ./release.sh ; fi
+  - if [ "$TRAVIS_TAG" != "" ]; then bash -x ./release.sh ; fi
 
