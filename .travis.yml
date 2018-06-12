@@ -10,6 +10,7 @@ script:
   # - mvn clean install -Ddocker.useColor=false -Ddocker.showLogs -Pdocker -Pjacoco coveralls:report
   - version=$(echo '1.0')
   - docker build -t crystaldust/testing:${version} ./
+  - echo "${TRAVIS_TAG}"
 
 after_success:
   - if [ "$TRAVIS_TAG" = "true" ]; then bash -x ./release.sh ; fi
