@@ -12,5 +12,5 @@ script:
   - docker build -t crystaldust/testing:${version} ./
 
 after_success:
-  - if [ "$TRAVIS_TAG" ]; then bash -x ./release.sh
+  - if [ "$TRAVIS_TAG" = "true" ]; then bash -x ./release.sh ; fi
 
